@@ -70,8 +70,8 @@ async function init() {
         sortNameButton.addEventListener("click", () => {
             isSortedByName = !isSortedByName;
             sortNameButton.textContent = isSortedByName
-                ? "Sắp xếp: Theo tên (A-Z) ✓"
-                : "Sắp xếp tên (A-Z)";
+                ? "Sắp xếp theo tên (A-Z) ✓"
+                : "Sắp xếp theo tên (A-Z)";
             sortNameButton.style.background = isSortedByName ? "#dbeafe" : "#f8fafc";
             refreshUI();
         });
