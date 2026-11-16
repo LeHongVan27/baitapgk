@@ -21,13 +21,6 @@
             Xem thống kê &rarr;
         </a>
     </header>
-    
-    <header class="page-header">
-        <div>
-            <h1>Quản lý điểm sinh viên</h1>
-            <p>Lớp CNTT1-K18 · Học kỳ 1</p>
-        </div>
-    </header>
 
     <main class="container">
         <section class="summary">
@@ -45,11 +38,32 @@
             </div>
         </section>
 
+        <section class="panel" style="margin-bottom: 24px;">
+            <div class="panel-heading">
+                <div>
+                    <h2>So sánh kết quả học tập</h2>
+                    <p>Chọn hai sinh viên bất kỳ để đối chiếu điểm 5 môn và điểm trung bình học kỳ.</p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px;">
+                <select id="compareStudent1" style="padding: 10px 14px; border: 1px solid #ccd4df; border-radius: 6px; font-size: 14px; min-width: 240px;">
+                    <option value="">-- Chọn sinh viên thứ nhất --</option>
+                </select>
+
+                <select id="compareStudent2" style="padding: 10px 14px; border: 1px solid #ccd4df; border-radius: 6px; font-size: 14px; min-width: 240px;">
+                    <option value="">-- Chọn sinh viên thứ hai --</option>
+                </select>
+            </div>
+
+            <div id="comparisonResult" class="table-wrapper"></div>
+        </section>
+
         <section class="panel">
             <div class="panel-heading">
                 <div>
                     <h2>Bảng điểm của lớp</h2>
-                    <p>Chọn một sinh viên để xem điểm chi tiết.</p>
+                    <p>Chọn một sinh viên để xem hoặc chỉnh sửa điểm chi tiết.</p>
                 </div>
 
                 <div style="display: flex; gap: 12px; flex-wrap: wrap;">
@@ -57,8 +71,9 @@
                         Sắp xếp tên (A-Z)
                     </button>
 
-                <input type="search" id="searchInput" placeholder="Tìm theo mã hoặc tên sinh viên..."
-                    aria-label="Tìm sinh viên">
+                    <input type="search" id="searchInput" placeholder="Tìm theo mã hoặc tên sinh viên..."
+                        aria-label="Tìm sinh viên">
+                </div>
             </div>
 
             <div id="loadingMessage" class="message">Đang tải dữ liệu...</div>
