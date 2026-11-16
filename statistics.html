@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thống kê kết quả học tập</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/table.css">
+</head>
+
+<body>
+    <header class="page-header" style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <h1>Thống kê kết quả học tập</h1>
+            <p>Lớp CNTT1-K18 · Học kỳ 1</p>
+        </div>
+        <a href="index.html" style="background: #2563eb; color: white; padding: 10px 16px; border-radius: 6px; text-decoration: none; font-weight: 600;">
+            &larr; Quay lại bảng điểm
+        </a>
+    </header>
+
+    <main class="container">
+        <div id="loadingMessage" class="message">Đang tải dữ liệu thống kê...</div>
+        <div id="errorMessage" class="message error" hidden></div>
+
+        <div id="statsContent" hidden>
+          <section class="panel" style="margin-bottom: 24px;">
+                <div class="panel-heading">
+                    <div>
+                        <h2>1. Sinh viên có điểm trung bình học kỳ cao nhất</h2>
+                        <p id="topStudentInfo" style="font-size: 16px; color: #1e40af; font-weight: 700; margin-top: 8px;"></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="summary" style="grid-template-columns: repeat(4, minmax(0, 1fr));">
+                <div class="summary-card">
+                    <span>Xếp loại Giỏi</span>
+                    <strong id="countGioi">0</strong>
+                </div>
+                <div class="summary-card">
+                    <span>Xếp loại Khá</span>
+                    <strong id="countKha">0</strong>
+                </div>
+                <div class="summary-card">
+                    <span>Xếp loại Trung bình</span>
+                    <strong id="countTB">0</strong>
+                </div>
+                <div class="summary-card">
+                    <span>Xếp loại Yếu</span>
+                    <strong id="countYeu">0</strong>
+                </div>
+            </section>
+
+            <section class="panel" style="margin-bottom: 24px;">
+                <div class="panel-heading">
+                    <div>
+                        <h2>2. Thống kê điểm theo từng môn học</h2>
+                        <p>Điểm trung bình, điểm thấp nhất và điểm cao nhất của cả lớp.</p>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã môn</th>
+                                <th>Tên môn học</th>
+                                <th>Điểm trung bình</th>
+                                <th>Điểm thấp nhất</th>
+                                <th>Điểm cao nhất</th>
+                            </tr>
+                        </thead>
+                        <tbody id="subjectStatsBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2>3. Danh sách sinh viên có môn dưới 5.0 điểm</h2>
+                        <p>Các sinh viên cần chú ý cải thiện kết quả học tập.</p>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã SV</th>
+                                <th>Họ và tên</th>
+                                <th>Lớp</th>
+                                <th>Các môn dưới 5.0</th>
+                                <th>Điểm TB học kỳ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="failedStudentsBody"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script type="module" src="js/statistics.js"></script>
+</body>
+
+</html>
