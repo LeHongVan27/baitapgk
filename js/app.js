@@ -15,11 +15,13 @@ async function init() {
     try {
         const { students, subjects, grades } = await loadData();
         let isSortedByName = false;
+
         const optionsHtml = students
             .map(s => `<option value="${s.id}">${s.id} - ${s.name}</option>`)
             .join("");
         select1.innerHTML += optionsHtml;
         select2.innerHTML += optionsHtml;
+
         function updateComparison() {
             const id1 = select1.value;
             const id2 = select2.value;
@@ -48,6 +50,7 @@ async function init() {
 
         select1.addEventListener("change", updateComparison);
         select2.addEventListener("change", updateComparison);
+
         function refreshUI() {
             const keyword = searchInput.value.trim().toLowerCase();
             let list = isSortedByName ? sortStudentsByName(students) : [...students];
@@ -63,6 +66,7 @@ async function init() {
             renderStudentList(list, subjects, grades, students);
             updateComparison();
         }
+
         sortNameButton.addEventListener("click", () => {
             isSortedByName = !isSortedByName;
             sortNameButton.textContent = isSortedByName
@@ -71,7 +75,9 @@ async function init() {
             sortNameButton.style.background = isSortedByName ? "#dbeafe" : "#f8fafc";
             refreshUI();
         });
+
         searchInput.addEventListener("input", refreshUI);
+
         refreshUI();
         setupStudentModal(students, subjects, grades, refreshUI);
 
@@ -83,3 +89,5 @@ async function init() {
         console.error(error);
     }
 }
+
+init();
