@@ -12,6 +12,16 @@
 </head>
 
 <body>
+    <header class="page-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div>
+            <h1>Quản lý điểm sinh viên</h1>
+            <p>Lớp CNTT1-K18 · Học kỳ 1</p>
+        </div>
+        <a href="statistics.html" style="background: #2563eb; color: white; padding: 10px 16px; border-radius: 6px; text-decoration: none; font-weight: 600;">
+            Xem thống kê &rarr;
+        </a>
+    </header>
+    
     <header class="page-header">
         <div>
             <h1>Quản lý điểm sinh viên</h1>
@@ -41,6 +51,11 @@
                     <h2>Bảng điểm của lớp</h2>
                     <p>Chọn một sinh viên để xem điểm chi tiết.</p>
                 </div>
+
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button id="sortNameButton" type="button" style="padding: 10px 16px; border: 1px solid #ccd4df; border-radius: 6px; background: #f8fafc; font-weight: 600; color: #1e3a5f;">
+                        Sắp xếp tên (A-Z)
+                    </button>
 
                 <input type="search" id="searchInput" placeholder="Tìm theo mã hoặc tên sinh viên..."
                     aria-label="Tìm sinh viên">
