@@ -53,15 +53,15 @@ export function setupStudentModal(students, subjects, grades, onUpdateCallback) 
                             <td class="student-name">${item.subjectName}</td>
                             <td>
                                 <input type="number" class="score-input" min="0" max="10" step="0.1"
-                                    value="${item.scores[0]}" style="width: 70px; padding: 6px; text-align: center; border: 1px solid #cbd5e1; border-radius: 4px;">
+                                    value="${item.scores.at(0)}" style="width: 70px; padding: 6px; text-align: center; border: 1px solid #cbd5e1; border-radius: 4px;">
                             </td>
                             <td>
                                 <input type="number" class="score-input" min="0" max="10" step="0.1"
-                                    value="${item.scores[1]}" style="width: 70px; padding: 6px; text-align: center; border: 1px solid #cbd5e1; border-radius: 4px;">
+                                    value="${item.scores.at(1)}" style="width: 70px; padding: 6px; text-align: center; border: 1px solid #cbd5e1; border-radius: 4px;">
                             </td>
                             <td>
                                 <input type="number" class="score-input" min="0" max="10" step="0.1"
-                                    value="${item.scores[2]}" style="width: 70px; padding: 6px; text-align: center; border: 1px solid #cbd5e1; border-radius: 4px;">
+                                    value="${item.scores.at(2)}" style="width: 70px; padding: 6px; text-align: center; border: 1px solid #cbd5e1; border-radius: 4px;">
                             </td>
                             <td class="average-score">${item.average.toFixed(2)}</td>
                         </tr>
